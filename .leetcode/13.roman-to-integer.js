@@ -11,12 +11,11 @@
  */
 var romanToInt = function (s) {
   let result = 0;
-  const stringArray = s.split("");
 
-  for (let i = 0; i <= stringArray.length; i++) {
-    switch (stringArray[i]) {
+  for (let i = 0; i <= s.length; i++) {
+    switch (s[i]) {
       case "I": {
-        switch (stringArray[i + 1]) {
+        switch (s[i + 1]) {
           case "V":
             result += 4;
             i++;
@@ -36,7 +35,7 @@ var romanToInt = function (s) {
         break;
 
       case "X": {
-        switch (stringArray[i + 1]) {
+        switch (s[i + 1]) {
           case "L":
             result += 40;
             i++;
@@ -56,7 +55,7 @@ var romanToInt = function (s) {
         break;
 
       case "C": {
-        switch (stringArray[i + 1]) {
+        switch (s[i + 1]) {
           case "D":
             result += 400;
             i++;
