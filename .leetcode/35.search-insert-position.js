@@ -11,25 +11,29 @@
  * @return {number}
  */
 var searchInsert = function (nums, target) {
-  let found = false;
+  // let found = false;
   let highestIndex = nums.length - 1;
   let lowestIndex = 0;
-  while (!found) {
-    console.log(lowestIndex, highestIndex);
+  while (lowestIndex <= highestIndex) {
+    // console.log("low", lowestIndex, "high", highestIndex);
     const middleIndex = Math.floor((lowestIndex + highestIndex) / 2);
-    console.log(middleIndex);
+    // console.log("middle", middleIndex);
     if (target < nums[middleIndex]) {
       highestIndex = middleIndex - 1;
+      // console.log("highest", highestIndex);
     } else if (target > nums[middleIndex]) {
       lowestIndex = middleIndex + 1;
-    } else if (target === nums[middleIndex]) {
-      found = true;
+      // console.log("lowest", lowestIndex);
+    } else {
       return middleIndex;
     }
   }
+  return lowestIndex;
 };
 // @lc code=end
 
-console.log(searchInsert([1, 3, 5, 6], 5));
-// console.log(searchInsert([1, 3, 5, 6], 2));
-// console.log(searchInsert([1, 3, 5, 6], 6));
+// console.log(searchInsert([1, 3, 5, 6], 5)); //2
+// console.log(searchInsert([1, 3, 5, 6], 2)); //1
+// console.log(searchInsert([1, 3, 5, 6], 7)); //4
+// console.log(searchInsert([1, 3, 5, 6], -7));
+// console.log(searchInsert([2, 3, 5, 6], 1)); //0
