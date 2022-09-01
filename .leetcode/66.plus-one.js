@@ -14,7 +14,7 @@ var plusOne = function (digits) {
   while (digits[last] === 9) {
     digits[last] = 0;
     if (last === 0) {
-      digits.splice(0, 0, 1);
+      digits.unshift(1);
       return digits;
     }
     last--;
