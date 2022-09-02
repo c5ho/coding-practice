@@ -23,5 +23,3 @@ var plusOne = function (digits) {
   return digits;
 };
 // @lc code=end
-
-console.log(plusOne([9, 9, 9]));
