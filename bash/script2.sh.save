@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo "the command you executed was: $0"
+echo "the first positional parameter was: $1"
+echo "the second positional parameter was: $2"
+echo "the total number of positional parameters was $#"
+echo "the process id of this script is $$"
+
+myparameters=$*
